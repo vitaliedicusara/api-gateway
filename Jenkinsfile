@@ -30,6 +30,10 @@ echo Building com.att.bc/api-gateway:latest
 
 docker build --no-cache -t com.att.bc/api-gateway:latest .
 rm ./main'''
+      }
+    }
+    stage('Push Image') {
+      steps {
         sh '''#!/bin/sh
 docker push com.att.bc/api-gateway:latest'''
       }
